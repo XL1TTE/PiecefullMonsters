@@ -2021,8 +2021,8 @@ MonoBehaviour:
   LayoutsScrollRect: {fileID: 6290852886513569567}
   HorizontalPageStep: {x: 1420, y: 0, z: 0}
   VerticalPageStep: {x: 0, y: 1080, z: 0}
-  TweenTime: 3
-  TweenType: 23
+  TweenTime: 1
+  TweenType: 24
   LEFT_BTN: {fileID: 977362670209201662}
   RIGHT_BTN: {fileID: 5184434640222776312}
   UP_BTN: {fileID: 8325293893807620505}

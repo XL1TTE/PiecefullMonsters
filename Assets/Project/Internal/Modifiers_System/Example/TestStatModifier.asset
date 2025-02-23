@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestStatModifier
   m_EditorClassIdentifier: 
   Name: "\u0421\u0438\u043B\u0430"
-  Description: "+5 \u0441\u0438\u043B\u044B"
+  Description: "+15 \u0441\u0438\u043B\u044B"
   AffectedStatType: 0
-  Value: 5
+  Value: 15
   operationType: 0

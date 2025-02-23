@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cf5cab458c49047a93689641217da0, type: 3}
   m_Name: SpeedModifier5
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  AffectedStatType: 0
-  Value: 0
+  Name: "\u0421\u043F\u0438\u0434\u0441\u0442\u0435\u0440"
+  Description: "+5 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438"
+  AffectedStatType: 2
+  Value: 5
   operationType: 0

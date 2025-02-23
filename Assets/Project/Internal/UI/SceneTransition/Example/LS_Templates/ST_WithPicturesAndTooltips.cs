@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class ST_WithPicturesAndTooltips : ABS_SceneTransition
 {
-    [Range(5, 10)]
+    [Range(2, 10)]
     public int TipMessageChangeDelay = 5;
-    [Range(5, 10)]
+    [Range(2, 10)]
     public int PictureChangeDelay = 5;
 
     public LoadingScreenData LoadingScreenData;
@@ -47,7 +47,6 @@ public class ST_WithPicturesAndTooltips : ABS_SceneTransition
         
         await Task.Delay(TransitionDelay * 1000);
       
-        sceneLoadingState.allowSceneActivation = true;
     }
 
     private void StartLoadingScreenVisuals()
@@ -81,6 +80,8 @@ public class ST_WithPicturesAndTooltips : ABS_SceneTransition
             yield return null;
         }
         LoadingProgressHolder.fillAmount = 1;
+        sceneLoadingState.allowSceneActivation = true;
+
     }
     private IEnumerator ShowPicturesCoroutine()
     {
