@@ -60,11 +60,13 @@
     <Analyzer Include="D:\Unity\2022.3.45f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Internal\Modifiers_System\ScriptableObjects\ModifierAffectingStatValue_SO.cs" />
     <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\MapCell.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\Example\LS_Templates\ST_WithPicturesAndTooltips.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\Example\HeroScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -79,7 +81,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\ScenesTransitionManager.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\ScriptableObjects\ModifierBase_SO.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\StatsMediator.cs" />
     <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\MapScheme.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\ScriptableObjects\BaseStats_SO.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\SceneTransitionTemplateSystem\RegisteredTemplate.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\SceneTransitionCaller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -92,6 +97,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\MapScheme_Editor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\Stats.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\StatModifierBase.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\Example\TestEquip_SO.cs" />
+    <Compile Include="Assets\Project\Internal\Modifiers_System\StatValueChangeModifier.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\SceneTransitionTemplateSystem\ScriptableObjects\Scripts\SO_LoadingScreenData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />

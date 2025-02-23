@@ -352,6 +352,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 509539114220527410, guid: f5169db9d110a6e4d8be1df8a2197aca, type: 3}
+      propertyPath: MapScheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 184552fcc3595f542ab923128a2e2d4a, type: 2}
     - target: {fileID: 581243394170902161, guid: f5169db9d110a6e4d8be1df8a2197aca, type: 3}
       propertyPath: m_Name
       value: MapedUI_example

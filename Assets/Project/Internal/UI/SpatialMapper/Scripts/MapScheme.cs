@@ -10,8 +10,8 @@ namespace Internal.UI
         #region Fields
 
         [Header("Map grid size:")]
-        public int width = 5;
-        public int height = 5;
+        public int width = 15;
+        public int height = 15;
 
         [HideInInspector]
         public MapCell[] cells;
@@ -22,6 +22,14 @@ namespace Internal.UI
         private void OnEnable()
         {
             if (cells == null)
+            {
+                InitializeMap();
+            }
+        }
+
+        private void OnValidate()
+        {
+            if(cells.Length != width * height)
             {
                 InitializeMap();
             }

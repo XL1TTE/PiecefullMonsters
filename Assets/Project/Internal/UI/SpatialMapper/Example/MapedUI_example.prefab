@@ -428,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 466}
+  m_AnchoredPosition: {x: 0, y: 460}
   m_SizeDelta: {x: 260, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1251684563818000710
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   HorizontalPageStep: {x: 1420, y: 0, z: 0}
   VerticalPageStep: {x: 0, y: 1080, z: 0}
   TweenTime: 3
-  TweenType: 24
+  TweenType: 23
   LEFT_BTN: {fileID: 977362670209201662}
   RIGHT_BTN: {fileID: 5184434640222776312}
   UP_BTN: {fileID: 8325293893807620505}
