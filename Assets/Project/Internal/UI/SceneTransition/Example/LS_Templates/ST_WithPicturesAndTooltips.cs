@@ -19,7 +19,7 @@ public class ST_WithPicturesAndTooltips : ABS_SceneTransition
     public Image PictureHolder;
     public Image LoadingProgressHolder;
 
-    [Range(3, 10)]
+    [Range(1, 10)]
     public int TransitionDelay;
 
     private void Update()

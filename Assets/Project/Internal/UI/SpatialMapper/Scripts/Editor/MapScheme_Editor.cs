@@ -4,10 +4,10 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-namespace Internal.UI
+namespace Internal.UI.Editor
 {
     [CustomEditor(typeof(MapScheme))]
-    public class MapScheme_Editor : Editor
+    public class MapScheme_Editor : UnityEditor.Editor
     {
         private MapScheme _mapScheme;
 

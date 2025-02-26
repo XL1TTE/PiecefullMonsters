@@ -9,7 +9,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>Internal</RootNamespace>
     <ProjectGuid>{21A399CB-28E0-5C41-C451-A92EB4F99CEE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -60,7 +60,8 @@
     <Analyzer Include="D:\Unity\2022.3.45f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Project\External\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <Compile Include="Assets\Project\Internal\MonsterSystem\MoveSetSchemes\Editor\Scheme_SO_Editor.cs" />
+    <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\Editor\MapScheme_Editor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1184,6 +1185,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{675123F2-F8BB-2A75-B645-1338C043BF0C}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Project.External.csproj">
+      <Project>{952CFB5E-5731-5A6E-B566-5CD0ED6B3D3A}</Project>
+      <Name>Project.External</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

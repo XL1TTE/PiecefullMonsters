@@ -380,7 +380,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52973df3c1f41f448919ae45ef14616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Registry: []
+  Legs:
+    Registry:
+    - ID: CowLeg
+      MonsterPart_Factory: {fileID: 11400000, guid: dc2772b9ff9ed5944b34d480635c1fa7, type: 2}
+  Arms:
+    Registry: []
+  Bodies:
+    Registry:
+    - ID: 
+      MonsterPart_Factory: {fileID: 0}
+  Heads:
+    Registry: []
 --- !u!1 &1500562134
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03234c8a30885948b6146cd5c424bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AfterConfigureSceneName: test_UI_SpatialMapper
+  AfterConfigureSceneName: MonstersSystemTEST_SCENE
   SceneTransitionTemplateID: default
 --- !u!1 &1799817400
 GameObject:
@@ -561,7 +572,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2401216962936097654, guid: c753d4e9ef2799c47ac003bdff384509, type: 3}
       propertyPath: TransitionDelay
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2401216962936097654, guid: c753d4e9ef2799c47ac003bdff384509, type: 3}
       propertyPath: PictureChangeDelay

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Internal.Modifiers_System
 {
 
-    [CreateAssetMenu(fileName = "BaseStats", menuName = "Modifiers_System/BaseStats_obj")]
+    [CreateAssetMenu(fileName = "BaseStats", menuName = "Modifiers/BaseStats")]
     public class BaseStats_SO : ScriptableObject
     {
         [Range(0f, 100f)] public int Strengh = 0;
