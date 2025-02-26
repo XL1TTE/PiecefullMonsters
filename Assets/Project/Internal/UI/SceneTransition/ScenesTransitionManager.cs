@@ -8,7 +8,7 @@ public class ScenesTransitionManager : MonoBehaviour
     private static ScenesTransitionManager _instance;
     private void Awake()
     {
-        if( _instance == null)
+        if (_instance == null)
         {
             _instance = this;
         }
@@ -24,9 +24,9 @@ public class ScenesTransitionManager : MonoBehaviour
 
     public bool TryRegisterNewTemplate(string ID, ABS_SceneTransition template)
     {
-        foreach(var item in _instance.TransitionTemplates)
+        foreach (var item in _instance.TransitionTemplates)
         {
-            if(item.TemplateID == ID)
+            if (item.TemplateID == ID)
             {
                 return false;
             }
@@ -44,11 +44,11 @@ public class ScenesTransitionManager : MonoBehaviour
 
     }
 
-    private  bool TryGetTransition(string TemplateID, out ABS_SceneTransition result)
+    private bool TryGetTransition(string TemplateID, out ABS_SceneTransition result)
     {
-        foreach(var item in _instance.TransitionTemplates)
+        foreach (var item in _instance.TransitionTemplates)
         {
-            if(item.TemplateID == TemplateID)
+            if (item.TemplateID == TemplateID)
             {
                 result = item.TransitionTemplate;
                 return true;
@@ -62,19 +62,19 @@ public class ScenesTransitionManager : MonoBehaviour
     {
         var _instance = Instance();
 
-        AsyncOperation LoadingState = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Single);
-        LoadingState.allowSceneActivation = false;
-
         try
         {
-            if(_instance.TryGetTransition(TemplateID, out var result))
+            if (_instance.TryGetTransition(TemplateID, out var result))
             {
-                result.sceneLoadingState = LoadingState;
+                AsyncOperation LoadingState = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Single);
+                LoadingState.allowSceneActivation = false;
 
+                result.sceneLoadingState = LoadingState;
                 result.StartTransition();
             }
             else
             {
+                Debug.LogError("Provided somewhere TemplateID for scene transition was not registred.");
                 return;
             }
 

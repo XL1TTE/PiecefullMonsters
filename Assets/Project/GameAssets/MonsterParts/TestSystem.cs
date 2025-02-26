@@ -1,5 +1,6 @@
 using Internal.GameStatics;
 using Internal.MonsterPartSystem;
+using Internal.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,19 +15,25 @@ namespace Internal
         [ContextMenu("TestLeg")]
         public void TestMonsterLegAcess()
         {
-            var factory = MonsterPartsRegistry.Instance().Legs.GetByID("CowLeg");
+            print("РќРѕРіРё РєРѕСЂРѕРІС‹ РґРѕ: " + PlayerCache.Data.GetInventory().GetMonsterPartQuantity("CowLeg"));
 
-            if(factory != null)
+            var factory = MonsterPartsRegistryCache.Legs().GetByID("CowLeg");
+
+            PlayerCache.Data.GetInventory().TryRemoveMonsterParts("CowLeg", 1);
+
+            print("РќРѕРіРё РєРѕСЂРѕРІС‹ РїРѕСЃР»Рµ: " + PlayerCache.Data.GetInventory().GetMonsterPartQuantity("CowLeg"));
+
+            if (factory != null)
             {
                 var leg = factory.CreateInstance();
                 Legs.Add(leg);
 
                 string log = "";
-                foreach(var i in Legs)
+                foreach (var i in Legs)
                 {
                     log += $"{i}\n";
                 }
-                Debug.Log($"CowLeg была успешно добавлена! Теперь список ног выглядит так: \n {log}");
+                Debug.Log($"CowLeg was removed: \n {log}");
             }
 
         }

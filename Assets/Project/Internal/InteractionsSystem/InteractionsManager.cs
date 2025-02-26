@@ -19,7 +19,7 @@ namespace Internal.InteractionsSystem
             {
                 BaseInteraction item = (BaseInteraction)Activator.CreateInstance(type);
                 all_interactions.Add(item);
-            }                
+            }
         }
 
         public List<IInteractionType> GetAllOf<IInteractionType>()
@@ -33,22 +33,22 @@ namespace Internal.InteractionsSystem
         public static List<IInteractionType> all;
         public static List<IInteractionType> GetAllOf(InteractionsManager interactionManager)
         {
-            if(all != null)
+            if (all != null)
             {
                 return all;
             }
 
             all = new List<IInteractionType>(64);
 
-            foreach(var interaction in interactionManager.all_interactions)
+            foreach (var interaction in interactionManager.all_interactions)
             {
-                if(interaction is IInteractionType t)
+                if (interaction is IInteractionType t)
                 {
                     all.Add(t);
                 }
             }
-            all.Sort((a, b) => (a as BaseInteraction).Priority() - (b as BaseInteraction).Priority());
+            all.Sort((a, b) => (b as BaseInteraction).Priority() - (a as BaseInteraction).Priority());
             return all;
-        }  
+        }
     }
 }

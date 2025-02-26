@@ -28,25 +28,43 @@ namespace Internal.GameStatics
         }
     }
 
-    public class MonsterPartsRegistry : MonoBehaviour
+    [Serializable]
+    public class MonsterPartsRegistry
     {
         [SerializeField] public PartRegistry<MonsterLeg> Legs;
         [SerializeField] public PartRegistry<MonsterArm> Arms;
         [SerializeField] public PartRegistry<MonsterBody> Bodies;
         [SerializeField] public PartRegistry<MonsterHead> Heads;
 
-        private static MonsterPartsRegistry _instance;
+    }
 
-        private void Awake()
+    public static class MonsterPartsRegistryCache
+    {
+        private static MonsterPartsRegistry Registry;
+
+        public static void CacheRegistry(MonsterPartsRegistry registry)
         {
-            if(_instance == null)
-            {
-                _instance = this;
-            }
+            Registry = registry;
         }
-        public static MonsterPartsRegistry Instance()
+
+        public static PartRegistry<MonsterLeg> Legs()
         {
-            return _instance;
+            return Registry.Legs;
+        }
+
+        public static PartRegistry<MonsterArm> Arms()
+        {
+            return Registry.Arms;
+        }
+
+        public static PartRegistry<MonsterHead> Heads()
+        {
+            return Registry.Heads;
+        }
+
+        public static PartRegistry<MonsterBody> Bodies()
+        {
+            return Registry.Bodies;
         }
 
     }

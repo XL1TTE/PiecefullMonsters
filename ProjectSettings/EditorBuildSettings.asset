@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ConfigureScene.unity
     guid: 5a9736f41d5daf54091de4d69d55f6a3
   - enabled: 1
-    path: Assets/Scenes/test_UI_SpatialMapper.unity
+    path: Assets/Scenes/main.unity
     guid: 9cbfb4c5c4f0ac24cbe10fba77ead231
   - enabled: 1
     path: Assets/Scenes/MonstersSystemTEST_SCENE.unity
