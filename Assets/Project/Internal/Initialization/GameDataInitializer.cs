@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Internal.GameInitialization.Contexts;
 using Internal.InteractionsSystem;
 using Internal.Player;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace Internal.GameInitialization
@@ -70,6 +68,7 @@ namespace Internal.GameInitialization
 
         private IEnumerator Initialize()
         {
+
             InteractionsManager intm = new InteractionsManager();
             intm.Init();
 
