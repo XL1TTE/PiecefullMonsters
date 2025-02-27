@@ -1,8 +1,7 @@
 using Internal.MonsterPartSystem;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+
 using UnityEngine;
 
 namespace Internal.GameStatics
@@ -26,16 +25,37 @@ namespace Internal.GameStatics
 
             return Record.MonsterPart_Factory;
         }
+        public List<string> GetAllIDs()
+        {
+            List<string> result = new();
+            foreach (var record in Registry)
+            {
+                result.Add(record.ID);
+            }
+            return result;
+        }
     }
 
     [Serializable]
     public class MonsterPartsRegistry
     {
-        [SerializeField] public PartRegistry<MonsterLeg> Legs;
-        [SerializeField] public PartRegistry<MonsterArm> Arms;
-        [SerializeField] public PartRegistry<MonsterBody> Bodies;
-        [SerializeField] public PartRegistry<MonsterHead> Heads;
+        [SerializeField] public PartRegistry<MonsterLeg> Legs = new();
+        [SerializeField] public PartRegistry<MonsterArm> Arms = new();
+        [SerializeField] public PartRegistry<MonsterBody> Bodies = new();
+        [SerializeField] public PartRegistry<MonsterHead> Heads = new();
 
+
+        public List<string> GetAllIDs()
+        {
+            List<string> result = new();
+
+            result.AddRange(Legs.GetAllIDs());
+            result.AddRange(Arms.GetAllIDs());
+            result.AddRange(Bodies.GetAllIDs());
+            result.AddRange(Heads.GetAllIDs());
+
+            return result;
+        }
     }
 
     public static class MonsterPartsRegistryCache
@@ -45,6 +65,11 @@ namespace Internal.GameStatics
         public static void CacheRegistry(MonsterPartsRegistry registry)
         {
             Registry = registry;
+        }
+
+        public static List<string> GetAllIDs()
+        {
+            return Registry.GetAllIDs();
         }
 
         public static PartRegistry<MonsterLeg> Legs()

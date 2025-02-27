@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Internal.Player
 {
+
     public static class PlayerCache
     {
         public static PlayerData Data = null;

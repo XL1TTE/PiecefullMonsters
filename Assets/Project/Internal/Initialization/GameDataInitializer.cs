@@ -87,11 +87,11 @@ namespace Internal.GameInitialization
         {
             try
             {
-                ScenesTransitionManager.ST_SingleMode_WithLoadingScreenAsync("MonstersSystemTEST_SCENE", "default");
+                ScenesTransitionManager.ST_SingleMode_WithLoadingScreenAsync("main", "default");
             }
             catch
             {
-                Debug.LogError("Scene Transition Manager must be on scene to start game loading.");
+                Debug.LogError("Scene Transition Manager must be on scene to start scene loading.");
             }
         }
     }

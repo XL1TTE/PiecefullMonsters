@@ -81,7 +81,7 @@ public class ScenesTransitionManager : MonoBehaviour
         }
         catch
         {
-            Debug.Log("Transition Prefab object must contain SceneTransition component.");
+            Debug.LogWarning("Transition Manager was not initialized.");
         }
     }
 

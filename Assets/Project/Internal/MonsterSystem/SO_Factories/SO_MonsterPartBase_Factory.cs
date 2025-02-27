@@ -8,7 +8,8 @@ namespace Internal.MonsterPartSystem
 {
     public abstract class SO_MonsterPartBase_Factory<PartType> : ScriptableObject
     {
-        [SerializeField] protected Sprite Sprite;
+        [SerializeField] public Sprite Sprite;
+        [SerializeField] public Sprite UI_Sprite;
 
         [SerializeField] protected List<ModifierAffectingStatValue_SO> modifiers;
 
