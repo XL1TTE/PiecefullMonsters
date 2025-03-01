@@ -6,9 +6,9 @@ using UnityEngine;
 namespace Internal.MonsterPartSystem
 {
     [CreateAssetMenu(fileName = "MonsterHead", menuName = "MonsterParts/HeadFactory")]
-    public class SO_MonsterHead_Factory : SO_MonsterPartBase_Factory<MonsterHead>
+    public class SO_MonsterHead_Factory : SO_MonsterPartBase_Factory
     {
-        public override MonsterHead CreateInstance()
+        public override MonsterPartBase CreateInstance()
         {
             List<ModifierBase> _modifiers = new();
             foreach (var mod in modifiers)

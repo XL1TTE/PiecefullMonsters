@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2988517469632613412
+--- !u!1 &5657643073973976535
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5259260835598141099}
-  - component: {fileID: 2102933168147042430}
+  - component: {fileID: 2707433610634215481}
+  - component: {fileID: 7457937114896168759}
   m_Layer: 0
-  m_Name: GameInitialize
+  m_Name: LaboratoryUI_Initializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5259260835598141099
+--- !u!4 &2707433610634215481
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2988517469632613412}
+  m_GameObject: {fileID: 5657643073973976535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,29 +32,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2102933168147042430
+--- !u!114 &7457937114896168759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2988517469632613412}
+  m_GameObject: {fileID: 5657643073973976535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad23d25e6f097b4ebaf45bfe5c2de08, type: 3}
+  m_Script: {fileID: 11500000, guid: bdbaabb7f1dc36f4b95936a17bd65f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerDataContext:
-    StandartMonsterPartsKit:
-    - ID: CowLeg
-      Quantity: 5
-    - ID: test-blue-head
-      Quantity: 1
-  MonstersPartsContext:
-    MonsterPartsRegistry:
-      Parts:
-        Registry:
-        - ID: CowLeg
-          MonsterPart_Factory: {fileID: 11400000, guid: dc2772b9ff9ed5944b34d480635c1fa7, type: 2}
-        - ID: test-blue-head
-          MonsterPart_Factory: {fileID: 11400000, guid: 3e7f1da0f173ab544aa22d5a5056a404, type: 2}
+  monsterPartsInventoryContext:
+    PartCategories:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    InventorySlotPrefab: {fileID: 2906591639075274547, guid: b08851f650385954290cbfc25f760fc0, type: 3}
+    SlotsTemp: []
+  monsterPartsInventoryController: {fileID: 0}

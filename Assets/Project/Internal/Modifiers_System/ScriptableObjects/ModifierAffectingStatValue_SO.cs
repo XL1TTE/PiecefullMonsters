@@ -8,7 +8,7 @@ namespace Internal.Modifiers_System
     [CreateAssetMenu(fileName = "StatModifier", menuName = "Modifiers/StatModifier")]
     public class ModifierAffectingStatValue_SO : ModifierBase_SO<ModifierBase>
     {
-        public enum OperationType { Float, Multiply}
+        public enum OperationType { Float, Multiply }
 
         [SerializeField] OperationType operationType;
 

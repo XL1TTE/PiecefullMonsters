@@ -1,25 +1,25 @@
 using Internal.MonsterPartSystem;
 using System;
 using System.Collections.Generic;
-
+using System.Reflection;
 using UnityEngine;
 
 namespace Internal.GameStatics
 {
     [Serializable]
-    public class MonsterPart_ID_Pair<MonsterPartType>
+    public class MonsterPart_ID_Pair
     {
         public string ID;
-        public SO_MonsterPartBase_Factory<MonsterPartType> MonsterPart_Factory;
+        public SO_MonsterPartBase_Factory MonsterPart_Factory;
     }
 
     [Serializable]
-    public class PartRegistry<PartType>
+    public class PartRegistry
     {
         [SerializeField]
-        private List<MonsterPart_ID_Pair<PartType>> Registry = new();
+        private List<MonsterPart_ID_Pair> Registry = new();
 
-        public SO_MonsterPartBase_Factory<PartType> GetByID(string ID)
+        public SO_MonsterPartBase_Factory GetByID(string ID)
         {
             var Record = Registry.Find(o => o.ID == ID);
 
@@ -39,22 +39,18 @@ namespace Internal.GameStatics
     [Serializable]
     public class MonsterPartsRegistry
     {
-        [SerializeField] public PartRegistry<MonsterLeg> Legs = new();
-        [SerializeField] public PartRegistry<MonsterArm> Arms = new();
-        [SerializeField] public PartRegistry<MonsterBody> Bodies = new();
-        [SerializeField] public PartRegistry<MonsterHead> Heads = new();
+        [SerializeField] public PartRegistry Parts = new();
 
 
         public List<string> GetAllIDs()
         {
-            List<string> result = new();
 
-            result.AddRange(Legs.GetAllIDs());
-            result.AddRange(Arms.GetAllIDs());
-            result.AddRange(Bodies.GetAllIDs());
-            result.AddRange(Heads.GetAllIDs());
+            return Parts.GetAllIDs();
+        }
 
-            return result;
+        public SO_MonsterPartBase_Factory GetByID(string id)
+        {
+            return Parts.GetByID(id);
         }
     }
 
@@ -72,24 +68,9 @@ namespace Internal.GameStatics
             return Registry.GetAllIDs();
         }
 
-        public static PartRegistry<MonsterLeg> Legs()
+        public static SO_MonsterPartBase_Factory GetByID(string id)
         {
-            return Registry.Legs;
-        }
-
-        public static PartRegistry<MonsterArm> Arms()
-        {
-            return Registry.Arms;
-        }
-
-        public static PartRegistry<MonsterHead> Heads()
-        {
-            return Registry.Heads;
-        }
-
-        public static PartRegistry<MonsterBody> Bodies()
-        {
-            return Registry.Bodies;
+            return Registry.GetByID(id);
         }
 
     }

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Project\Internal\InteractionsSystem\InteractionInterfaces.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterPartsInventoryController.cs" />
     <Compile Include="Assets\Project\Internal\InteractionsSystem\BaseInteraction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -89,10 +90,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterBuilderSlot.cs" />
     <Compile Include="Assets\Project\Internal\Initialization\Contexts\PlayerDataInit_Context.cs" />
     <Compile Include="Assets\Project\Internal\MonsterSystem\SO_Factories\SO_MonsterLeg_Factory.cs" />
     <Compile Include="Assets\Project\Internal\Initialization\Contexts\MonstersPartsInit_Context.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterPartInventorySlot_DraggedPart.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterPartInventoryContext.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Project\Internal\InteractionsSystem\InteractionsManager.cs" />
     <Compile Include="Assets\Project\Internal\MonsterSystem\MoveSetSchemes\SchemeBase_SO.cs" />
@@ -100,9 +104,7 @@
     <Compile Include="Assets\Project\Internal\Modifiers_System\ScriptableObjects\ModifierBase_SO.cs" />
     <Compile Include="Assets\Project\Internal\Modifiers_System\StatsMediator.cs" />
     <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\MapScheme.cs" />
-    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\LaboratoryPartsController.cs" />
     <Compile Include="Assets\Project\Internal\Modifiers_System\ScriptableObjects\BaseStats_SO.cs" />
-    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterPart_UIslot_Controller.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\SceneTransitionTemplateSystem\RegisteredTemplate.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\SceneTransitionCaller.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\LaboratoryInitializer.cs" />
     <Compile Include="Assets\Project\Internal\Modifiers_System\Stats.cs" />
     <Compile Include="Assets\Project\Internal\Modifiers_System\StatModifierBase.cs" />
     <Compile Include="Assets\Project\Internal\Modifiers_System\Example\TestEquip_SO.cs" />
@@ -136,11 +139,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Project\GameAssets\MonsterParts\TestSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\MonsterPartInventorySlot.cs" />
     <Compile Include="Assets\Project\Internal\MonsterSystem\MonsterParts\MonsterLeg.cs" />
     <Compile Include="Assets\Project\Internal\Player\PlayerCache.cs" />
     <Compile Include="Assets\Project\Internal\Utilities\ReflectionUtility.cs" />
     <Compile Include="Assets\Project\Internal\UI\SceneTransition\Example\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Project\Internal\UI\SpatialMapper\Scripts\UIMapper.cs" />
+    <Compile Include="Assets\Project\Internal\UI\LaboratoryUI\UIPartCategoryScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Project\Internal\Player\Inventory.cs" />
   </ItemGroup>

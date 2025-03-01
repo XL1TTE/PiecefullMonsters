@@ -10,14 +10,14 @@ namespace Internal
     public class TestSystem : MonoBehaviour
     {
 
-        public List<MonsterLeg> Legs = new List<MonsterLeg>();
+        public List<MonsterPartBase> Legs = new List<MonsterPartBase>();
 
         [ContextMenu("TestLeg")]
         public void TestMonsterLegAcess()
         {
             print("Ноги коровы до: " + PlayerCache.Data.GetInventory().GetMonsterPartQuantity("CowLeg"));
 
-            var factory = MonsterPartsRegistryCache.Legs().GetByID("CowLeg");
+            var factory = MonsterPartsRegistryCache.GetByID("CowLeg");
 
             PlayerCache.Data.GetInventory().TryRemoveMonsterParts("CowLeg", 1);
 

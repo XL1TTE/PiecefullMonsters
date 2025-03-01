@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: CowLeg
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+  UI_Sprite_Unlocked: {fileID: 21300000, guid: 751b95103e72d69428a36b5efbfcc166, type: 3}
+  UI_Sprite_Locked: {fileID: 21300000, guid: 40b3ee1e1325e764ea8468cbc9d90b87, type: 3}
+  PartType: 0
   modifiers:
   - {fileID: 11400000, guid: c3c903a3c5cd5e749a37436807810ede, type: 2}
   AttackSceme: {fileID: 11400000, guid: 0adefabb239a8784ba36431e4b94ca2a, type: 2}

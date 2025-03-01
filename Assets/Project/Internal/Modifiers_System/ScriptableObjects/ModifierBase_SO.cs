@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Internal.Modifiers_System
 {
+
+
     public abstract class ModifierBase_SO<ModifierBaseType> : ScriptableObject
     {
         public string Name;
