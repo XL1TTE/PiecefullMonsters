@@ -66,6 +66,7 @@ namespace Internal.UI.EventSystem
                 _defaultscales.TryAdd(sel, sel.transform.localScale);
             }
             gameObject.SetActive(true);
+            SetFirstSelected();
         }
 
         public void DisableBehaviour()
@@ -77,9 +78,9 @@ namespace Internal.UI.EventSystem
             gameObject.SetActive(false);
         }
 
-        public IEnumerator SetFirstSelected()
+        public void SetFirstSelected()
         {
-            yield return SelectAfterDelay();
+            StartCoroutine(SelectAfterDelay());
         }
 
         protected virtual void AddListeners(Selectable selectable)

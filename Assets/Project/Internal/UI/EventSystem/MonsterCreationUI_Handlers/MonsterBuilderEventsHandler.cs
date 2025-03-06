@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Internal.GameStatics;
 using Internal.LaboratoryUI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Internal.UI.EventSystem
 {
-    public class MonsterBuilderSlotsEventsHandler : UI_DynamicEventSystemHandler
+    public class MonsterBuilderSlotsEventsHandler : UI_EventSystemHandler
     {
         [SerializeField] Color SelectedColor;
         [SerializeField] Color DeselectedColor;
@@ -15,15 +17,19 @@ namespace Internal.UI.EventSystem
         protected override void AddListeners(Selectable selectable)
         {
             base.AddListeners(selectable);
+            var slot = selectable.gameObject.GetComponent<MonsterBuilderSlot>();
+            if (slot != null)
+            {
+                slot.SlotSpriteHolder.color = DeselectedColor;
+            }
         }
 
         protected override void OnSelect(BaseEventData eventData)
         {
             base.OnSelect(eventData);
-            var slot = eventData.selectedObject.GetComponent<MonsterPartInventorySlot>();
+            var slot = eventData.selectedObject.GetComponent<MonsterBuilderSlot>();
             if (slot != null)
             {
-                slot.ItemSpriteHolder.color = SelectedColor;
                 slot.SlotSpriteHolder.color = SelectedColor;
             }
         }
@@ -31,10 +37,9 @@ namespace Internal.UI.EventSystem
         protected override void OnDeselect(BaseEventData eventData)
         {
             base.OnDeselect(eventData);
-            var slot = eventData.selectedObject.GetComponent<MonsterPartInventorySlot>();
+            var slot = eventData.selectedObject.GetComponent<MonsterBuilderSlot>();
             if (slot != null)
             {
-                slot.ItemSpriteHolder.color = DeselectedColor;
                 slot.SlotSpriteHolder.color = DeselectedColor;
             }
         }

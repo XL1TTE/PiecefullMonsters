@@ -25,7 +25,6 @@ namespace Internal.LaboratoryUI.Controllers
         #region Navigation Actions
         private void NavigateToShop()
         {
-
             var map = LaboratoryController.instance.UISectionsMapper;
             if (map != null)
             {
@@ -46,6 +45,7 @@ namespace Internal.LaboratoryUI.Controllers
                 Inventory player_inventory = PlayerCache.Data.GetInventory();
 
                 StartCoroutine(MonsterPartsUI_Controller.Setup(player_inventory, context));
+                StartCoroutine(MonsterBuilderUI_Controller.Setup());
             }
             else
             {

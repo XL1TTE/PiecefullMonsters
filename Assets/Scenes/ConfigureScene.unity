@@ -412,6 +412,10 @@ PrefabInstance:
       value: CowArm
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
+      propertyPath: PlayerDataContext.StandartMonsterPartsKit.Array.data[6].ID
+      value: CowArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: PlayerDataContext.StandartMonsterPartsKit.Array.data[2].Quantity
       value: 2
       objectReference: {fileID: 0}
@@ -428,8 +432,12 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
+      propertyPath: PlayerDataContext.StandartMonsterPartsKit.Array.data[6].Quantity
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[0].ID
@@ -445,15 +453,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[3].ID
-      value: CowLeg
+      value: CowBody
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[4].ID
-      value: CowBody
+      value: CowBody2
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[5].ID
       value: CowArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
+      propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[6].ID
+      value: CowLeg
       objectReference: {fileID: 0}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[0].MonsterPart_Factory
@@ -466,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[3].MonsterPart_Factory
       value: 
-      objectReference: {fileID: 11400000, guid: dc2772b9ff9ed5944b34d480635c1fa7, type: 2}
+      objectReference: {fileID: 11400000, guid: 3e3fb7088def380449f8c602881568ac, type: 2}
     - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[4].MonsterPart_Factory
       value: 
@@ -475,6 +487,10 @@ PrefabInstance:
       propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[5].MonsterPart_Factory
       value: 
       objectReference: {fileID: 11400000, guid: ba5ce1ff07c3859459cecd32ca8e5378, type: 2}
+    - target: {fileID: 2102933168147042430, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
+      propertyPath: MonstersPartsContext.MonsterPartsRegistry.Parts.Registry.Array.data[6].MonsterPart_Factory
+      value: 
+      objectReference: {fileID: 11400000, guid: dc2772b9ff9ed5944b34d480635c1fa7, type: 2}
     - target: {fileID: 2988517469632613412, guid: 8afe59690a4370b44ad318ad347431c5, type: 3}
       propertyPath: m_Name
       value: GameInitialize

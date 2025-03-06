@@ -6,6 +6,7 @@ using Internal.MonsterPartSystem;
 using Internal.Player;
 using Internal.UI.EventSystem;
 using Internal.UI.Utility;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ namespace Internal.LaboratoryUI.Controllers
         private Inventory playerInventory;
         [SerializeField] public MonsterPartsInventoryEventsHandler MonsterPartsPanelEvents;
 
-        [Range(1, 5), SerializeField] private int PartCategoryMaxItemsInRow = 4;
+        [Range(1, 5), SerializeField] public int PartCategoryMaxItemsInRow = 4;
 
         private MonsterCreationControllerContext context;
 
@@ -29,8 +30,7 @@ namespace Internal.LaboratoryUI.Controllers
             StartCoroutine(SetupUISelectables());
 
             SetupSelectablesNavigations();
-
-            yield return MonsterPartsPanelEvents.SetFirstSelected();
+            yield return null;
         }
 
 

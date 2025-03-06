@@ -36,7 +36,6 @@ namespace Internal.UI.EventSystem
         {
             foreach (var record in Selectables)
             {
-                AddSelectionListeners(record);
                 _defaultscales.TryAdd(record, record.transform.localScale);
             }
         }
@@ -57,13 +56,31 @@ namespace Internal.UI.EventSystem
         }
 
 
+        public void EnableBehaviour()
+        {
+            foreach (var sel in Selectables)
+            {
+                AddListeners(sel);
+            }
+            gameObject.SetActive(true);
+        }
+
+        public void DisableBehaviour()
+        {
+            foreach (var sel in Selectables)
+            {
+                RemoveListeners(sel);
+            }
+            gameObject.SetActive(false);
+        }
+
         protected IEnumerator SelectAfterDelay()
         {
             yield return null;
             UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelected.gameObject);
         }
 
-        protected virtual void AddSelectionListeners(Selectable selectable)
+        protected virtual void AddListeners(Selectable selectable)
         {
             EventTrigger trigger = selectable.gameObject.GetComponent<EventTrigger>();
             if (trigger == null)
@@ -100,6 +117,15 @@ namespace Internal.UI.EventSystem
             PointerExit.callback.AddListener(OnPointerExit);
             trigger.triggers.Add(PointerExit);
 
+        }
+
+        protected virtual void RemoveListeners(Selectable selectable)
+        {
+            EventTrigger trigger = selectable.gameObject.GetComponent<EventTrigger>();
+            if (trigger != null)
+            {
+                trigger.triggers.Clear();
+            }
         }
 
         protected virtual void OnPointerExit(BaseEventData eventData)

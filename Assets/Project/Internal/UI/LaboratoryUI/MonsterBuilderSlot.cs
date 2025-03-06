@@ -8,22 +8,23 @@ using UnityEngine.UI;
 
 namespace Internal.LaboratoryUI
 {
-    [RequireComponent(typeof(GridLayoutGroup))]
     public class MonsterBuilderSlot : MonoBehaviour, IDropHandler
     {
         private MonsterPartInventorySlot_DraggedPart DataInSlot;
         [SerializeField] private MonsterPartType PartType;
+        [SerializeField] public Image SlotSpriteHolder;
+        [SerializeField] public Transform Slot;
 
         public void OnDrop(PointerEventData eventData)
         {
             var item = eventData.pointerDrag;
 
             if (item.TryGetComponent<MonsterPartInventorySlot_DraggedPart>(out DataInSlot) &&
-                gameObject.transform.childCount < 1 &&
+                Slot.childCount < 1 &&
                 MonsterPartsRegistryCache.GetByID(DataInSlot.AttachedSlot.AttachedPartID).PartType == this.PartType)
             {
                 DataInSlot.WasPlacedInBuilder = true;
-                DataInSlot.parentAfterDrag = gameObject.transform;
+                DataInSlot.parentAfterDrag = Slot;
 
 
                 Debug.Log($"{DataInSlot.AttachedSlot.AttachedPartID}");
