@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Internal.LaboratoryUI.Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Internal.UI
 {
-    [RequireComponent(typeof(MapClient))]
-    public class UIMapper : MonoBehaviour
+    [Serializable]
+    public class UIMapper
     {
-        private MapClient MapClient;
 
         [SerializeField]
         private RectTransform LayoutsScrollRect;
@@ -22,92 +24,72 @@ namespace Internal.UI
         private float TweenTime;
 
         [SerializeField]
-        private LeanTweenType TweenType;
+        private Ease TweenType;
 
         private Vector3 TargetPosition;
 
+        [HideInInspector] public SectionControllerBase PrevSectionController;
+        [HideInInspector] public SectionControllerBase CurrentSectionController;
 
-        [Header("Buttons refs.")]
-        #region ButtonsRefs
-        public Button LEFT_BTN;
-        public Button RIGHT_BTN;
-        public Button UP_BTN;
-        public Button DOWN_BTN;
-        #endregion
-
-        private void Awake()
+        public event Action CurrentSectionControllerChanged;
+        public void OnCurrentSectionChanged()
         {
-            MapClient = GetComponent<MapClient>();
+            CurrentSectionControllerChanged?.Invoke();
+        }
 
-            if (MapClient != null)
-            {
-                MapClient.OnCurrentPositionChanged += UpdateButtonsStateFromCurrentPosition;
-            }
+        public IEnumerator Init(SectionControllerBase StartSection)
+        {
 
             TargetPosition = LayoutsScrollRect.localPosition;
 
+            if (StartSection != null)
+            {
+                CurrentSectionController = StartSection;
+            }
+            else
+            {
+                Debug.LogError("Start section controller was not specified in UIMapper");
+            }
+
+            yield return null;
+
         }
 
-        public void MoveToDirection(Vector2Int direction)
+        public void MoveToSectionInDirection(Vector2Int direction, SectionControllerBase section_controller)
         {
-            if (MapClient.isDirectionAllowed(direction))
-                MapClient.UpdateCurrentPosition(direction);
-
             if (direction == Vector2Int.left)
             {
                 TargetPosition += HorizontalPageStep;
+                ChangeActiveSection(section_controller);
+
             }
             else if (direction == Vector2Int.right)
             {
                 TargetPosition -= HorizontalPageStep;
+                ChangeActiveSection(section_controller);
             }
             else if (direction == Vector2Int.up)
             {
                 TargetPosition -= VerticalPageStep;
+                ChangeActiveSection(section_controller);
             }
             else if (direction == Vector2Int.down)
             {
                 TargetPosition += VerticalPageStep;
+                ChangeActiveSection(section_controller);
             }
-
             MoveToTarget();
         }
 
+        private void ChangeActiveSection(SectionControllerBase section_controller)
+        {
+            PrevSectionController = CurrentSectionController;
+            CurrentSectionController = section_controller;
+            OnCurrentSectionChanged();
+        }
         private void MoveToTarget()
         {
-            LayoutsScrollRect.LeanMoveLocal(TargetPosition, TweenTime).setEase(TweenType);
+            LayoutsScrollRect.DOLocalMove(TargetPosition, TweenTime).SetEase(TweenType);
         }
-
-        private void UpdateButtonsStateFromCurrentPosition()
-        {
-            LEFT_BTN.interactable = MapClient.isDirectionAllowed(Vector2Int.left);
-            RIGHT_BTN.interactable = MapClient.isDirectionAllowed(Vector2Int.right);
-            UP_BTN.interactable = MapClient.isDirectionAllowed(Vector2Int.up);
-            DOWN_BTN.interactable = MapClient.isDirectionAllowed(Vector2Int.down);
-
-        }
-
-
-        #region ButtonsClickHandlers
-        public void OnLeftButtonClick()
-        {
-            MoveToDirection(Vector2Int.left);
-        }
-
-        public void OnRightButtonClick()
-        {
-            MoveToDirection(Vector2Int.right);
-        }
-
-        public void OnUpButtonClick()
-        {
-            MoveToDirection(Vector2Int.up);
-        }
-
-        public void OnDownButtonClick()
-        {
-            MoveToDirection(Vector2Int.down);
-        }
-        #endregion
     }
 }

@@ -11,10 +11,16 @@ namespace Internal.LaboratoryUI
 
         [SerializeField] Transform ItemsContainer;
 
+        [HideInInspector] public List<GameObject> CategoryItems;
+
 
         public Transform GetCategoryTransform()
         {
-            return ItemsContainer;
+            if (ItemsContainer != null)
+                return ItemsContainer;
+
+            Debug.Log($"Items container wasn't specified in Monster part category of {PartType} type");
+            return null;
         }
     }
 }

@@ -13,9 +13,15 @@ namespace Internal.InteractionsSystem
         public IEnumerator OnGameInitialize(GameDataInitializer context);
     }
 
-    public interface IOnLaboratoryUIInitializing
+    public interface IOnLaboratoryUIInitializingStart
     {
         public IEnumerator OnInitialize(LaboratoryInitializer context);
-
     }
+
+    public interface IOnLaboratoryUIInitialized
+    {
+        public IEnumerator OnInitialized(LaboratoryInitializer context);
+    }
+
+
 }

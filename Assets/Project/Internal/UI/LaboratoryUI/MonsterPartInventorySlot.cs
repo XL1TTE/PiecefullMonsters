@@ -17,7 +17,8 @@ namespace Internal.LaboratoryUI
         [HideInInspector] public Sprite UnlockedSprite;
         [HideInInspector] private Sprite LockedSprite;
 
-        [SerializeField] private Image SpriteHolder;
+        [SerializeField] public Image ItemSpriteHolder;
+        [SerializeField] public Image SlotSpriteHolder;
         [SerializeField] public TextMeshProUGUI QuantityCounter;
 
         [SerializeField] private Transform DraggedPartSlot;
@@ -43,7 +44,7 @@ namespace Internal.LaboratoryUI
             set
             {
                 _isLocked = value;
-                SpriteHolder.sprite = _isLocked ? LockedSprite : UnlockedSprite;
+                ItemSpriteHolder.sprite = _isLocked ? LockedSprite : UnlockedSprite;
             }
         }
 
